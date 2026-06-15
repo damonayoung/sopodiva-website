@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sopodiva Development — Build & repair across Africa, with trust</title>
+<meta name="description" content="Sopodiva Development Company Ltd builds across Ghana and beyond — a full-service construction arm and a verified-artisan marketplace under one trusted name. Find a vetted artisan, request a project, or book a site inspection."/>
+<meta property="og:title" content="Sopodiva Development — Engineering Excellence. Delivering Impact."/>
+<meta property="og:description" content="Construction · Verified-Artisan Marketplace · Development. Trusted connections. Quality execution."/>
+<meta property="og:type" content="website"/>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav__in">
+    <div class="brand" data-route="/" role="link" tabindex="0" aria-label="Sopodiva Development home">
+      <img src="assets/logo.svg" alt="" width="40" height="40"/>
+      <span>
+        <span class="brand__name">Sopodiva Development</span>
+        <span class="brand__sub">Engineering Excellence</span>
+      </span>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav__links" aria-label="Primary">
+      <a data-route="/marketplace">Find an Artisan</a>
+      <a data-route="/services">Services</a>
+      <a data-route="/request">Start a Project</a>
+      <a data-route="/join">Join the Network</a>
+      <a data-route="/about">About</a>
+      <a data-route="/contact">Contact</a>
+      <a class="btn btn--amber nav__cta" data-route="/urgent">Urgent Repair</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ROUTED VIEW -->
+<main id="view" tabindex="-1"></main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="brand">
+          <img src="assets/logo.svg" alt="Sopodiva Development logo" width="40" height="40"/>
+          <span><span class="brand__name">Sopodiva Development</span><span class="brand__sub">Company Ltd</span></span>
+        </div>
+        <p>Building Africa through technology and construction. Trusted connections, quality execution — from an urgent leak to a finished building.</p>
+      </div>
+      <div>
+        <h4>Marketplace</h4>
+        <a data-route="/marketplace">Find a verified artisan</a>
+        <a data-route="/join">Join the artisan network</a>
+        <a data-route="/urgent">Urgent repairs</a>
+      </div>
+      <div>
+        <h4>Build with us</h4>
+        <a data-route="/request">Start a project</a>
+        <a data-route="/inspection">Request a site inspection</a>
+        <a data-route="/services">All services</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a data-route="/about">About us</a>
+        <a data-route="/contact">Contact</a>
+        <a href="mailto:info@sopodiva.com">info@sopodiva.com</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="yr"></span> Sopodiva Development Company Ltd · Accra, Ghana</span>
+      <span>Construction · Verified-Artisan Marketplace · Development</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

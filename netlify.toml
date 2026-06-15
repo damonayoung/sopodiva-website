@@ -1,0 +1,17 @@
+# Netlify config — static site, no build step
+[build]
+  publish = "."
+  command = ""
+
+# SPA fallback so deep links (#routes are client-side; this covers /index)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
