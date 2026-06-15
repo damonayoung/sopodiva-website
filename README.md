@@ -58,7 +58,7 @@ or move artisan data to a real DB — the front end's `loadArtisans()` and
 index.html            shell: nav, routed view, footer
 assets/styles.css     design system (navy + steel + safety-amber; Roboto Slab + Inter)
 assets/app.js         SPA router, marketplace, forms, validation, submission
-assets/logo.svg       SD monogram (brand navy)
+assets/img/           real logo (logo-full / logo-mark / favicon) + optimized photos
 backend/Code.gs       Google Apps Script backend (deploy separately)
 netlify.toml          static deploy config + security headers
 ```

@@ -102,10 +102,13 @@
       </div>
     </div></section>`;
 
-  const pageIntro = (eyebrow, title, sub) => `
-    <section class="page-intro"><div class="wrap page-intro__in fade-in">
-      <p class="eyebrow">${eyebrow}</p>
-      <h1>${title}</h1>${sub?`<p>${sub}</p>`:""}
+  const pageIntro = (eyebrow, title, sub, media) => `
+    <section class="page-intro ${media?"page-intro--media":""}"><div class="wrap page-intro__in fade-in">
+      <div>
+        <p class="eyebrow">${eyebrow}</p>
+        <h1>${title}</h1>${sub?`<p>${sub}</p>`:""}
+      </div>
+      ${media?`<div class="pi-media"><img src="${media}" alt="" loading="lazy"/></div>`:""}
     </div></section>`;
 
   /* =======================================================================
@@ -182,7 +185,20 @@
     </div></section>
 
     <section class="section"><div class="wrap">
+      <div class="split feature">
+        <div>
+          <p class="eyebrow">Technology</p>
+          <h2>A mobile-first platform that scales with the continent</h2>
+          <p class="lead">Discovery and trust on the devices people already carry — search, filter, and match in a few taps, with quality scored from real outcomes on real jobs.</p>
+          <div class="hero__cta" style="margin:18px 0 0"><a class="btn" data-route="/marketplace">Explore the marketplace ${svg(I.arrow)}</a></div>
+        </div>
+        <div class="split__media"><img src="assets/img/tech-tablet.jpg" alt="Site team reviewing plans on a tablet on an Accra build" loading="lazy"/></div>
+      </div>
+    </div></section>
+
+    <section class="section section--mist"><div class="wrap">
       <div class="section__head"><p class="eyebrow">Who we serve</p><h2>Built for everyone shaping Africa's spaces</h2></div>
+      <div class="serve-photo"><img src="assets/img/team-five.jpg" alt="A team of African professionals" loading="lazy"/></div>
       <div class="grid grid-2">
         ${[
           [I.home,"Homeowners & developers","Families and property developers building or maintaining homes."],
@@ -217,7 +233,8 @@
   function marketplace() {
     return pageIntro("Door 1 · The Marketplace",
       "Find a verified artisan you can trust",
-      "Discover vetted professionals, compare them on real reviews, and hire with confidence. Every artisan is screened before they appear.") + `
+      "Discover vetted professionals, compare them on real reviews, and hire with confidence. Every artisan is screened before they appear.",
+      "assets/img/marketplace-woman.jpg") + `
     <section class="section"><div class="wrap">
       <div class="mk__bar">
         <div class="field"><label for="mk-q">Search</label>
@@ -304,11 +321,13 @@
       "Two service lines, one accountable team. Pick a verified artisan for a single job, or hand us a full build.") + `
     <section class="section"><div class="wrap"><div class="svc">
       <div class="card">
+        <div class="imgcard__media" style="aspect-ratio:16/7;margin:-24px -24px 18px;border-radius:var(--r) var(--r) 0 0"><img src="assets/img/svc-roofers.jpg" alt="Roofers at work in Accra" loading="lazy"/></div>
         <div class="model__h">${ic(I.bolt,"ic ic--steel")}<h3 class="mb-0">Urgent repairs &amp; maintenance</h3></div>
         <ul class="svc__list">${urgent.map(s=>`<li>${s}</li>`).join("")}</ul>
         <a class="btn btn--amber btn--wide" data-route="/urgent" style="margin-top:14px">Report an urgent repair</a>
       </div>
       <div class="card">
+        <div class="imgcard__media" style="aspect-ratio:16/7;margin:-24px -24px 18px;border-radius:var(--r) var(--r) 0 0"><img src="assets/img/svc-mason.jpg" alt="Mason plastering a wall" loading="lazy"/></div>
         <div class="model__h">${ic(I.build)}<h3 class="mb-0">Construction &amp; development</h3></div>
         <ul class="svc__list">${dev.map(s=>`<li>${s}</li>`).join("")}</ul>
         <a class="btn btn--wide" data-route="/request" style="margin-top:14px">Start a project</a>
@@ -490,7 +509,8 @@
       successMsg:"Thank you — our team will review the scope and reach out within one business day to confirm next steps."
     };
     return pageIntro("Door 2 · Build & Deliver","Start a project",
-      "From drawing to delivery, for private clients and public works alike.") + buildForm(cfg) + (window._cfg = cfg, "");
+      "From drawing to delivery, for private clients and public works alike.",
+      "assets/img/project-scaffolding.jpg") + buildForm(cfg) + (window._cfg = cfg, "");
   }
 
   function urgentForm() {
@@ -534,7 +554,8 @@
       successMsg:"Thanks — we'll confirm your site visit by phone or email and assign an engineer to the assessment."
     };
     return pageIntro("Site inspection","Request a site inspection",
-      "An on-the-ground assessment before you commit — ideal for buyers, developers, and diaspora investors.") + buildForm(cfg) + (window._cfg = cfg, "");
+      "An on-the-ground assessment before you commit — ideal for buyers, developers, and diaspora investors.",
+      "assets/img/accra-aerial.jpg") + buildForm(cfg) + (window._cfg = cfg, "");
   }
 
   function joinForm() {
@@ -558,7 +579,8 @@
       successMsg:"Thank you for applying. Our team will review your details and contact you to begin verification — the step that earns you the Verified badge."
     };
     return pageIntro("Join the network","Become a verified artisan",
-      "Get discovered, build a reputation, and win more work through the platform.") + buildForm(cfg) + (window._cfg = cfg, "");
+      "Get discovered, build a reputation, and win more work through the platform.",
+      "assets/img/crew-rebar.jpg") + buildForm(cfg) + (window._cfg = cfg, "");
   }
 
   /* =======================================================================
@@ -573,7 +595,8 @@
       ["Partnership","Strong collaboration with clients and stakeholders."]
     ];
     return pageIntro("About us","Engineering excellence. Delivering impact.",
-      "Sopodiva Development Company Ltd is a forward-looking construction and infrastructure company, committed to high-quality, sustainable, and innovative engineering across Ghana and beyond.") + `
+      "Sopodiva Development Company Ltd is a forward-looking construction and infrastructure company, committed to high-quality, sustainable, and innovative engineering across Ghana and beyond.",
+      "assets/img/about-office.jpg") + `
     <section class="section"><div class="wrap">
       <div class="grid grid-2">
         <div class="card"><div class="model__h">${ic(I.eye)}<h3 class="mb-0">Vision</h3></div>
@@ -600,15 +623,20 @@
     </div></section>
 
     <section class="section section--navy"><div class="wrap">
-      <div class="section__head"><p class="eyebrow" style="color:var(--steel-200)">Our impact</p>
-      <h2>Trust that builds livelihoods — and cityscapes</h2></div>
-      <div class="grid grid-4">
-        ${[
-          [I.eye,"Transparency","Reviews and verification clean up an opaque industry."],
-          [I.people,"Jobs & visibility","Skilled artisans gain reputation and a steady pipeline."],
-          [I.shield,"Safer delivery","Accountability raises quality and safety on every build."],
-          [I.build,"Urban development","Reliable execution supports Africa's fast-growing cities."]
-        ].map(([i,t,d])=>`<div class="card aud" style="background:rgba(255,255,255,.04);border-color:rgba(159,180,198,.22)">${ic(i,"ic ic--steel")}<div><h3 style="color:#fff">${t}</h3><p style="color:#CDD9E3">${d}</p></div></div>`).join("")}
+      <div class="split">
+        <div class="split__media"><img src="assets/img/impact-tema.jpg" alt="Aerial view of a growing African city" loading="lazy"/></div>
+        <div>
+          <p class="eyebrow" style="color:var(--steel-200)">Our impact</p>
+          <h2>Trust that builds livelihoods — and cityscapes</h2>
+          <div class="grid grid-2" style="margin-top:22px">
+            ${[
+              [I.eye,"Transparency","Reviews and verification clean up an opaque industry."],
+              [I.people,"Jobs & visibility","Skilled artisans gain reputation and a steady pipeline."],
+              [I.shield,"Safer delivery","Accountability raises quality and safety on every build."],
+              [I.build,"Urban development","Reliable execution supports Africa's fast-growing cities."]
+            ].map(([i,t,d])=>`<div class="aud" style="gap:12px"><span class="ic ic--steel" style="width:42px;height:42px;margin:0">${svg(i)}</span><div><h3 style="color:#fff;font-size:1.02rem">${t}</h3><p style="color:#CDD9E3;font-size:.9rem">${d}</p></div></div>`).join("")}
+          </div>
+        </div>
       </div>
     </div></section>
     ${ctaBand()}`;
