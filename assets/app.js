@@ -10,7 +10,7 @@
      While empty, the site runs in DEMO MODE: forms validate and "succeed"
      locally so you can click through everything before the backend is live. */
   const CONFIG = {
-    API_URL: "", // e.g. "https://script.google.com/macros/s/AKfy.../exec"
+    API_URL: "https://script.google.com/macros/s/AKfycbzNgo33N896rX4YaUDSzFrmWIWaivJCa5PhUswtnKrwzOVUU23od9rV3CULODhbJSD9/exec", // e.g. "https://script.google.com/macros/s/AKfy.../exec"
     EMAIL: "info@sopodiva.com",
     PHONE_1: "+233 558 244 098",
     PHONE_2: "+233 593 868 612",
