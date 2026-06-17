@@ -11,7 +11,7 @@
      locally so you can click through everything before the backend is live. */
   const CONFIG = {
     API_URL: "https://script.google.com/macros/s/AKfycbzNgo33N896rX4YaUDSzFrmWIWaivJCa5PhUswtnKrwzOVUU23od9rV3CULODhbJSD9/exec", // e.g. "https://script.google.com/macros/s/AKfy.../exec"
-    EMAIL: "info@sopodiva.com",
+    EMAIL: "dev@sopodiva.com",
     PHONE_1: "+233 558 244 098",
     PHONE_2: "+233 593 868 612",
     WHATSAPP: "233558244098"
@@ -280,9 +280,7 @@
           </div>
         </div>
         <div class="artisan__meta">
-          ${a.reviews>0
-            ? `<span>${stars(a.rating)} <span style="color:var(--muted)">(${a.reviews})</span></span>`
-            : `<span class="tag" style="background:#E7F2EC;color:var(--good);border-color:#CFE6DA">New</span>`}
+          ${a.reviews>0 ? `<span>${stars(a.rating)} <span style="color:var(--muted)">(${a.reviews})</span></span>` : ""}
           ${a.years>0 ? `<span>${a.years} yrs exp</span>` : ""}
           ${a.jobs>0 ? `<span>${a.jobs}+ jobs</span>` : ""}
         </div>
