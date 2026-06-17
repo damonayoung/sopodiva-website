@@ -264,7 +264,7 @@
              (!mkState.city || a.city===mkState.city);
     });
     const key = mkState.sort;
-    list.sort((a,b)=> b[key]-a[key]);
+    list.sort((a,b)=> (b.featured?1:0)-(a.featured?1:0) || b[key]-a[key]);
 
     const grid = $("#mk-grid"), count = $("#mk-count");
     if (!grid) return;
@@ -280,9 +280,11 @@
           </div>
         </div>
         <div class="artisan__meta">
-          <span>${stars(a.rating)} <span style="color:var(--muted)">(${a.reviews})</span></span>
-          <span>${a.years} yrs exp</span>
-          <span>${a.jobs}+ jobs</span>
+          ${a.reviews>0
+            ? `<span>${stars(a.rating)} <span style="color:var(--muted)">(${a.reviews})</span></span>`
+            : `<span class="tag" style="background:#E7F2EC;color:var(--good);border-color:#CFE6DA">New</span>`}
+          ${a.years>0 ? `<span>${a.years} yrs exp</span>` : ""}
+          ${a.jobs>0 ? `<span>${a.jobs}+ jobs</span>` : ""}
         </div>
         <div class="artisan__tags">${a.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
         <div class="artisan__foot">
