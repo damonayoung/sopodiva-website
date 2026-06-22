@@ -704,7 +704,7 @@
   };
 
   /* ----- SEO: per-route <head> management --------------------------------- */
-  const ORIGIN = "https://www.sopodivadevelopment.com";
+  const ORIGIN = "https://sopodivadevelopment.com";
   function headMeta(sel, attr, key){
     let el = document.head.querySelector(sel);
     if (!el){ el = document.createElement("meta"); el.setAttribute(attr, key); document.head.appendChild(el); }

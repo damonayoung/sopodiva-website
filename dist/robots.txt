@@ -14,4 +14,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://www.sopodivadevelopment.com/sitemap.xml
+Sitemap: https://sopodivadevelopment.com/sitemap.xml

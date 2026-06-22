@@ -14,7 +14,7 @@ import { JSDOM, VirtualConsole } from "jsdom";
 
 const ROOT   = process.cwd();
 const OUT    = join(ROOT, "dist");
-const ORIGIN = "https://www.sopodivadevelopment.com";
+const ORIGIN = "https://sopodivadevelopment.com";
 
 // Keep in sync with the ROUTES map in assets/app.js.
 const ROUTES = [
