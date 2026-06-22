@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# AI answer engines — your prerendered HTML is what they can read
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.sopodivadevelopment.com/sitemap.xml

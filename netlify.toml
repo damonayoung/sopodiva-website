@@ -1,9 +1,10 @@
-# Netlify config — static site, no build step
+# Netlify config — static SPA with prerender build (see scripts/prerender.mjs)
 [build]
-  publish = "."
-  command = ""
+  publish = "dist"
+  command = "npm install && npm run build"
 
-# SPA fallback so deep links (#routes are client-side; this covers /index)
+# Deep-link fallback. Netlify serves a matching prerendered file first
+# (e.g. /marketplace/index.html); only unknown paths fall through to the shell.
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -15,3 +16,9 @@
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Long-cache fingerprinted-able static assets (safe; HTML stays uncached)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"

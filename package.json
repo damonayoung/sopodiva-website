@@ -1,0 +1,13 @@
+{
+  "name": "sopodiva-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sopodiva Development — static SPA with prerender + sitemap build for SEO",
+  "scripts": {
+    "build": "node scripts/prerender.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  }
+}
