@@ -56,7 +56,7 @@ const today = new Date().toISOString().slice(0, 10);
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n` +
   `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  ROUTES.map(r => `  <url><loc>${ORIGIN}${r === "/" ? "/" : r}</loc><lastmod>${today}</lastmod></url>`).join("\n") +
+  ROUTES.map(r => `  <url><loc>${ORIGIN}${r === "/" ? "/" : r + "/"}</loc><lastmod>${today}</lastmod></url>`).join("\n") +
   `\n</urlset>\n`;
 await writeFile(join(OUT, "sitemap.xml"), sitemap, "utf8");
 

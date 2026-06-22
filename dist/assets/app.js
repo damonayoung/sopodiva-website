@@ -723,7 +723,7 @@
     el.textContent = obj ? JSON.stringify(obj) : "";
   }
   function setHead(path, route){
-    const url = ORIGIN + (path === "/" ? "/" : path);
+    const url = ORIGIN + (path === "/" ? "/" : path + "/");
     document.title = route.title;
     setName("description", route.desc);
     setCanonical(url);
